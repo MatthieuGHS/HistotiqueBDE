@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    overflow-x: hidden; /* Empêche le débordement horizontal */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    height: 10vh;
+}
+
+nav img {
+    margin-right: 1vw;
+    margin-left: 1vw;
+}
+
+#main {
+    height: 100vh;
+    width: 100%; 
+    padding: 3vw; 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+    position: relative; /* Permet aux enfants absolus de se positionner relativement à #main */
+    font-family: "Lexend", sans-serif;
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Espace entre les images de navigation et le contenu */
+    backdrop-filter: brightness(3%);
+}
+
+#topDiv, #botDiv {
+    position: absolute; /* Permet un placement absolu */
+    left: 50%; /* Centre les divs horizontalement */
+    transform: translateX(-50%); /* Corrige le centrage */
+    width: auto; /* Laisse la largeur s'adapter au contenu */
+    display: flex;
+    justify-content: center; /* Centre horizontalement les images */
+}
+
+#topDiv {
+    top: 10px; /* Place le bouton du haut tout en haut, avec un léger espace */
+}
+
+#botDiv {
+    bottom: 10px; /* Place le bouton du bas tout en bas, avec un léger espace */
+}
+
+#topDiv img,
+#botDiv img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centre tous les éléments verticalement */
+    align-items: center;
+    flex: 1;
+    padding: 1rem 0;
+}
+
+.logo {
+    margin-bottom: 1rem; /* Augmente l'espace sous le logo */
+    filter: drop-shadow(5px 5px 10px #ffffff);
+}
+
+#text {
+    font-size: 10vw;
+    color: black;
+    margin: 8vh;
+    line-height: 1;
+    /* text-shadow: 2px 2px 16px rgba(255,255,255,0.62); */
+    text-shadow: 2px 2px 38px rgba(255,255,255,1);
+}
+
+.button {
+    margin-top: 1rem; /* Augmente l'espace au-dessus du bouton */
+}
+
+.button button {
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#rot {
+    transform: rotate(180deg);
+}
+
+.pink {
+    color: white;
+}
+
+.blue {
+    color: white;
+    background-color: #42586d;
+}
+
+.confetti {
+    position: absolute;
+    pointer-events: none; /* Empêche d'interagir avec les confettis */
+    animation: fadeOut 3s forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100px); /* Confettis tombent */
+    }
+}
+
